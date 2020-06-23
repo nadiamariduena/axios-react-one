@@ -11,6 +11,8 @@ export default class PersonList extends React.Component {
   //
   componentDidMount() {
     axios.get(`https://jsonplaceholder.typicode.com/users`).then((res) => {
+      console.log(res.data);
+
       this.setState({ persons: res.data });
     });
   }
@@ -21,10 +23,12 @@ export default class PersonList extends React.Component {
     return (
       // this will check inside the array
       //   always give a key id when doing this, otherwise it will send an error
+      //    {this.state.persons && if is not empty  : render, this line is linked to line6 : persons: [],
       <ul>
-        {this.persons.map((person) => (
-          <li key={person.id}> {person.name} </li>
-        ))}
+        {this.state.persons &&
+          this.state.persons.map((person) => (
+            <li key={person.id}> {person.name} </li>
+          ))}
       </ul>
     );
   }
