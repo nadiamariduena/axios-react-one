@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PersonList from "./components/PersonList";
+import PersonInput from "./components/PersonInput";
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
           <div className="page">
             <div className="top-section">
               <h1>HELLO AXIOS</h1>
+              <PersonInput />
               <PersonList />
             </div>
           </div>

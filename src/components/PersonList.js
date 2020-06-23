@@ -12,7 +12,7 @@ export default class PersonList extends React.Component {
   componentDidMount() {
     //tutorial api names:    https://jsonplaceholder.typicode.com/users
     //assigment api countries :    https://restcountries.eu/rest/v2/all
-    axios.get(`https://restcountries.eu/rest/v2/all`).then((res) => {
+    axios.get(`https://jsonplaceholder.typicode.com/users`).then((res) => {
       console.log(res.data);
 
       this.setState({ persons: res.data });
